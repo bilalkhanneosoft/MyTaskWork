@@ -33,11 +33,11 @@ class MainActivity : AppCompatActivity() {
 
         mBinding.etSearch.doOnTextChanged { text, start, before, count ->
             text?.let {
-                mListAdapter!!.filter!!.filter(it.toString())
+                mListAdapter!!.filter.filter(it.toString())
             }
         }
 
-        mBinding.viewPager?.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        mBinding.viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {
             }
 
@@ -58,8 +58,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        mBinding.recyclerView!!.setLayoutManager(LinearLayoutManager(this))
-        mBinding.recyclerView!!.setHasFixedSize(true)
+        mBinding.recyclerView.setLayoutManager(LinearLayoutManager(this))
 
         mBinding.viewPager.adapter = viewModel.categoryAdapter
         mBinding.tabLayout.setupWithViewPager(mBinding.viewPager)

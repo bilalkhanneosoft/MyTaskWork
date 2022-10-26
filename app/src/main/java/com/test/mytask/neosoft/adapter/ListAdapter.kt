@@ -42,7 +42,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.DeveloperViewHolder>() , Fi
     }
 
     fun setDeveloperList(mDeveloperModel: ArrayList<ImageModel>) {
-        filteredImages = mDeveloperModel!!
+        filteredImages = mDeveloperModel
         this.mDeveloperModel = mDeveloperModel
         notifyDataSetChanged()
     }
